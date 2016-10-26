@@ -11,15 +11,15 @@ class FailureDataSet{
 	/**
 	 * private attributes including time and number, time is the array of failure time
 	 */
-	public float []time;
-	public float []number;
+	public double []time;
+	public double []number;
 
 	/**
 	 *
 	 * @param time: array of failure time
 	 * @param number: array of failure times within certain time
 	 */
-	public FailureDataSet(float []time, float []number){
+	public FailureDataSet(double []time, double []number){
 		this.time = time;
 		this.number = number;
 	}
@@ -64,7 +64,7 @@ public class CommonModelParent {
 	 * @param time
 	 * @param number
 	 */
-	public CommonModelParent(float []time, float []number){
+	public CommonModelParent(double []time, double []number){
 		this.failureDate = new FailureDataSet(time, number);
 		this.estimationResults = new EstimationResults();
 	}
