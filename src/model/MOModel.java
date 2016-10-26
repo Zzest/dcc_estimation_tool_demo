@@ -1,4 +1,7 @@
 package model;
+
+import util.DataTransform;
+
 /**
  * M-O model
  * @author daxu
@@ -79,23 +82,8 @@ public class MOModel extends CommonModelParent implements ModelInterface{
 		}
 
 		System.out.println(b1);
-
-//		while(true){//迭代法计算
-//			double sum=0;
-//			for(int i=0; i<n;++i){
-//				sum+=1/(1+left*this.failureDate.time[i]);
-//			}
-//			right = (float) (sum*(1+left*tn)*Math.log(1+left*tn))/n/tn;
-//
-//			if(Math.abs(left-right)<errorValue){
-//				b1 = left;
-//				b0 = n/Math.log(1+b1*tn);
-//				System.out.println("b1:"+b1+" b0:"+ b0);
-//				break;
-//			}
-//			left = right;
-//		}
 	}
+
 
 	/**
 	 * 二分法求函数值
@@ -131,22 +119,15 @@ public class MOModel extends CommonModelParent implements ModelInterface{
 
 	public static void main(String[] args) {
 		// failure date set
-//		float []time = new float[]{5,9,10,15,18,26,27,35,42,46,50,56,63,67,72,75,78,85,88,98,
+//		double []time = new float[]{5,9,10,15,18,26,27,35,42,46,50,56,63,67,72,75,78,85,88,98,
 //				100,111,125,129,137,142,155,165,181,204};
-//		float []time = new float[]{5,9,10,15,18,26,27,35,42,46,50,56,63,67,72};
-		double []time = new double[]
-				{5,14,24,39,57,
-				83, 110,145,187,234,
-				284,340,403,470,542};
-//		float []time = new float[]{5,4,1,5,3,8,1,8,7,4,4,6,7,4,7};
-//		System.out.println(time.length);
+		double []time = new double[]{5,9,10,15,18,26,27,35,42,46,50,56,63,67,72};
+
 
 		double []number = new double[]{1,2,3};
 
 		//choose a model
-		MOModel moModel = new MOModel(time, number);
-//		moModel.calculate(0.00001);
-//		moModel.printResult();
+		MOModel moModel = new MOModel(DataTransform.accumateTointerval(time), number);
 		moModel.dichoCaculate(0.001);
 
 

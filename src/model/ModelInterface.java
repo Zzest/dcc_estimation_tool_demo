@@ -12,7 +12,7 @@ public interface ModelInterface {
 	 * function to realize the calculation
 	 * param errorValue: define the precision of the method
 	 */
-	void calculate(double errorValue);
+	void calculate(double deviation);
 
 	/**
 	 * function to print the result
