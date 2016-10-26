@@ -31,18 +31,18 @@ class FailureDataSet{
  *
  */
 class EstimationResults{
-	public float mttf;
-	public float reliability;
-	public float failureRate;
-	public float residualFaultNum;
-	public float expectFaultNum;
+	public double mttf;
+	public double reliability;
+	public double failureRate;
+	public double residualFaultNum;
+	public double expectFaultNum;
 
 	public EstimationResults(){
-		this.mttf = (float) -1.0;
-		this.reliability = (float) -1.0;
-		this.failureRate = (float) -1.0;
-		this.residualFaultNum = (float) -1.0;
-		this.expectFaultNum = (float) -1.0;
+		this.mttf = -1.0;
+		this.reliability =  -1.0;
+		this.failureRate =  -1.0;
+		this.residualFaultNum =  -1.0;
+		this.expectFaultNum =  -1.0;
 	}
 
 }
